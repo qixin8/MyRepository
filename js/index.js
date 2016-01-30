@@ -4,7 +4,6 @@ var winW = document.documentElement.clientWidth;
 var winH = document.documentElement.clientHeight;
 var a1=document.querySelector(".a1");
 var img1=document.querySelector("#img1");
-
 var desW = 640;
 var desH = 960;
 
@@ -61,9 +60,10 @@ function move(e){
         this.prevSIndex = (index == oLis.length-1?0:index+1);
         oLis[this.prevSIndex].style.webkitTransform = "translate(0,"+(winH+movePos)+"px)";
     }
-    this.style.webkitTransform = "scale("+(1-Math.abs(movePos)/winH*1/2)+")  translate(0,"+movePos+"px)";
     oLis[this.prevSIndex].className = 'zIndex';
     oLis[this.prevSIndex].style.display ="block";
+    this.style.webkitTransform = "scale("+(1-Math.abs(movePos)/winH*1/2)+")  translate(0,"+movePos+"px)";
+
 }
 function end(e){
     if(this.flag){
